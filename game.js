@@ -14,7 +14,7 @@ var savedBestTime = localStorage.getItem('bestTime');
 
 if (savedBestTime) {
   bestTime = parseInt(savedBestTime);
-  besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2) + '초';
+  besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2);
 }
 
 numbers = [];
@@ -26,7 +26,7 @@ function set() {
   numbers = [];
   currentIndex = 0;
   startTime = new Date();
-  gametime.innerHTML = 'game time : 0.00초';
+  gametime.innerHTML = 'game time : 0.00';
 
   for (var i = 1; i <= 25; i++) {
     numbers.push(i);
@@ -53,7 +53,7 @@ function reset() {
   var confirmation = confirm("초기화 하시겠습니까?");
   if (confirmation) {
     set();
-    besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2) + '초';
+    besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2);
   }
 }
 
@@ -74,11 +74,11 @@ function handleClick() {
     if (currentIndex === 25) {
       var endTime = new Date();
       var gameTime = endTime - startTime;
-      gametime.innerHTML = 'game time : ' + (gameTime / 1000).toFixed(2) + '초';
+      gametime.innerHTML = 'game time : ' + (gameTime / 1000).toFixed(2);
 
       if (gameTime < bestTime) {
         bestTime = gameTime;
-        besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2) + '초';
+        besttime.innerHTML = 'best time : ' + (bestTime / 1000).toFixed(2);
         localStorage.setItem('bestTime', bestTime.toString());
       }
 
@@ -91,5 +91,5 @@ function handleClick() {
 function updateGameTime() {
     var currentTime = new Date();
     var gameTime = currentTime - startTime;
-    gametime.innerHTML = 'game time : ' + (gameTime/1000).toFixed(2) + '초';
+    gametime.innerHTML = 'game time : ' + (gameTime/1000).toFixed(2);
 }
