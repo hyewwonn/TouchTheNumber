@@ -9,6 +9,7 @@ var gametime = document.getElementById("game-time");
 var besttime = document.getElementById("best-time");
 
 var bestTime = Number.MAX_SAFE_INTEGER;
+besttime.innerHTML = 'best time :';
 var savedBestTime = localStorage.getItem('bestTime');
 
 if (savedBestTime) {
